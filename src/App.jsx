@@ -121,8 +121,8 @@ function App() {
 
     // let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=0e67aa1753380ba20619da288d7b4edd&units=metric`;
 
-    let url = `http://api.weatherapi.com/v1/current.json?key=ca7779e4dbf74ca8ad455029241411&q=${city}&aqi=yes`;
-    let forecast = `http://api.weatherapi.com/v1/forecast.json?key=ca7779e4dbf74ca8ad455029241411&q=${city}&days=7`;
+    let url = `https://api.weatherapi.com/v1/current.json?key=ca7779e4dbf74ca8ad455029241411&q=${city}&aqi=yes`;
+    let forecast = `https://api.weatherapi.com/v1/forecast.json?key=ca7779e4dbf74ca8ad455029241411&q=${city}&days=7`;
 
     try {
       let fetched_data2 = await axios.get(url);
