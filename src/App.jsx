@@ -188,12 +188,18 @@ function App() {
             <span className="min">{changes_measure == 0 ? `${forecast?.forecast?.forecastday[0]?.day?.mintemp_c || ""}` : `${forecast?.forecast?.forecastday[0]?.day?.mintemp_f || ""}`} <sup>{changes_measure == 0 ? "°C" : "°F" }</sup>  / </span>
             <span className="max">{changes_measure == 0 ? `${forecast?.forecast?.forecastday[0]?.day?.maxtemp_c || ""}` : `${forecast?.forecast?.forecastday[0]?.day?.maxtemp_f || ""}`} <sup>{changes_measure == 0 ? "°C" : "°F" }</sup></span>
             </div>
+            <div className="text-center">
+                {forecast?.forecast?.forecastday[0]?.day?.condition?.text || ""}
+            </div>
           </div>
           <div className="two w-40">
             <div className="day text-center p-4">Tomorrow</div>
             <div className="min_max p-2 text-center">
             <span className="min">{changes_measure == 0 ? `${forecast?.forecast?.forecastday[1]?.day?.mintemp_c || ""}` : `${forecast?.forecast?.forecastday[1]?.day?.mintemp_f || ""}`} <sup>{changes_measure == 0 ? "°C" : "°F" }</sup>  / </span>
             <span className="max">{changes_measure == 0 ? `${forecast?.forecast?.forecastday[1]?.day?.maxtemp_c || ""}` : `${forecast?.forecast?.forecastday[1]?.day?.maxtemp_f || ""}`} <sup>{changes_measure == 0 ? "°C" : "°F" }</sup></span>
+            </div>
+            <div className="text-center">
+                {forecast?.forecast?.forecastday[1]?.day?.condition?.text || ""}
             </div>
           </div>
           <div className="three w-40">
@@ -202,7 +208,7 @@ function App() {
             <span className="min">{changes_measure == 0 ? `${forecast?.forecast?.forecastday[2]?.day?.mintemp_c || ""}` : `${forecast?.forecast?.forecastday[2]?.day?.mintemp_f || ""}`} <sup>{changes_measure == 0 ? "°C" : "°F" }</sup>  / </span>
             <span className="max">{changes_measure == 0 ? `${forecast?.forecast?.forecastday[2]?.day?.maxtemp_c || ""}` : `${forecast?.forecast?.forecastday[2]?.day?.maxtemp_f || ""}`} <sup>{changes_measure == 0 ? "°C" : "°F" }</sup></span>
             </div>
-            <div>
+            <div className="text-center">
                 {forecast?.forecast?.forecastday[2]?.day?.condition?.text || ""}
             </div>
           </div>
