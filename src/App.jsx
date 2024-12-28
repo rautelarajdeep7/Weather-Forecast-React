@@ -151,7 +151,7 @@ function App() {
   return (
     <>
 
-      <div className='app relative min-h-min w-screen bg-cover bg-no-repeat flex flex-wrap flex-col items-center justify-start gap-8' ref={bg}>
+      <div className='app relative min-h-min w-screen bg-cover bg-no-repeat flex flex-wrap flex-col items-center justify-start gap-3' ref={bg}>
         <button className="change_temp_measure" onClick={(event) => { change_temp_measure() }}>{changes_measure == 0? "°C" : "°F" }</button>
 
         <div className="today flex flex-wrap justify-around items-center gap-64 p-10">
