@@ -202,6 +202,10 @@ function App() {
             <span className="min">{changes_measure == 0 ? `${forecast?.forecast?.forecastday[2]?.day?.mintemp_c || ""}` : `${forecast?.forecast?.forecastday[2]?.day?.mintemp_f || ""}`} <sup>{changes_measure == 0 ? "°C" : "°F" }</sup>  / </span>
             <span className="max">{changes_measure == 0 ? `${forecast?.forecast?.forecastday[2]?.day?.maxtemp_c || ""}` : `${forecast?.forecast?.forecastday[2]?.day?.maxtemp_f || ""}`} <sup>{changes_measure == 0 ? "°C" : "°F" }</sup></span>
             </div>
+            {forecast?.forecast?.forecastday[2]?.day?.condition?.text || ""}
+            <div>
+              
+            </div>
           </div>
 
 
