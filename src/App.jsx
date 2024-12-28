@@ -160,7 +160,7 @@ function App() {
             <span className="main_temp">{changes_measure == 0 ? `${temp_data?.current?.temp_c || ""}` : `${temp_data?.current?.temp_f || ""}`}</span>
             <span className="celsius_show"><sup>{changes_measure == 0 ? "°C" : "°F" }</sup></span>
             <div className="city">
-              <input type="text" onKeyDown={(e) => { change_city(e) }} className="city city_input ps-2" value={city} onChange={(e) => setcity(e.target.value)} />
+              <input type="text" onKeyDown={(e) => { if (e.key === "Enter"){ change_city(e) } }} className="city city_input ps-2" value={city} onChange={(e) => setcity(e.target.value)} />
 
               <button onClick={(e) => { change_city(e) }}> &nbsp;<i className="fa-solid fa-magnifying-glass"></i></button>
 
