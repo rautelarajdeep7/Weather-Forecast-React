@@ -12,18 +12,11 @@ import snowy from './assets/img/snowy.jpg'
 import sunny from './assets/img/sunny.jpg'
 import thunderstorm from './assets/img/thunderstorm.jpg'
 
-
-// API usage link:  https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
-// API key = 0e67aa1753380ba20619da288d7b4edd
-
-// https://api.openweathermap.org/data/2.5/weather?q=London&appid=0e67aa1753380ba20619da288d7b4edd
-
 function App() {
 
   let [city, setcity] = useState("Dehradun");
   let [temp_data, setdata] = useState({});
   let [forecast, setforecast] = useState({});
-  // let [code, setcode] = useState();
   let [changes_measure, setChangeMeasure] = useState(0);
   let bg = useRef();
   let forecast_box = useRef();
@@ -82,7 +75,6 @@ function App() {
       if (!(i === 0 || i === 1)) {
         day.innerHTML = `${day_name[setday]}`;
         setday += 1;
-        console.log(day.innerHTML)
       }
     })
 
@@ -113,37 +105,23 @@ function App() {
   // ------------------------------ Using promise ------------------------------ 
   // let fetched_data = axios.get(url).then((res)=>{console.log(res.data)}); 
 
-
   //------------------------------  Using async-await ------------------------------
-
-
   let weather = async () => {
-
-    // let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=0e67aa1753380ba20619da288d7b4edd&units=metric`;
 
     let url = `https://api.weatherapi.com/v1/current.json?key=ca7779e4dbf74ca8ad455029241411&q=${city}&aqi=yes`;
     let forecast = `https://api.weatherapi.com/v1/forecast.json?key=ca7779e4dbf74ca8ad455029241411&q=${city}&days=7`;
 
     try {
       let fetched_data2 = await axios.get(url);
-      console.log("url data", fetched_data2.data)
       setdata(() => fetched_data2.data)
 
       let forecast_data = await axios.get(forecast);
-      console.log("forecast data", forecast_data.data)
       setforecast(() => forecast_data.data);
     }
 
     catch (error) {
       console.log("ERROR occured: ", error);
-      // if (city == "") {
-      //   setdata({ "name": "Empty city", "main": { "temp": "Empty city" } })
-      // }
-      // else {
-      //   setdata({ "name": "Invalid city input", "main": { "temp": "Invalid input" } })
-      // }
     }
-
 
   }
 
@@ -218,14 +196,6 @@ function App() {
 
 
       </div>
-
-
-      {/* 
-      We used ternary operator above because sometimes data inside data doesn't come on time and there can be some gap of even some milli seconds, and in that 
-      case, react gives error while putting value of state in components. 
-      So we have to use ternary operator so that whenever the data comes, the value gets updated and if there is no data then something else will get printed.
-      In our case, if data comes then it gets put in h3 tag else an empty string is put in h3 tag.
-    */}
 
     </>
   )
